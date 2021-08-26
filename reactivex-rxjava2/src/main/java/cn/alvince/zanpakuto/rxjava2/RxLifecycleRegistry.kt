@@ -38,6 +38,8 @@ sealed class AbsRxLifecycleRegistry : RxLifecycleRegistry {
 
     override val attached: Boolean get() = disposableRegistry != null
 
+    internal val active: Boolean get() = attached && disposableRegistry?.disposed == false
+
     private var disposableRegistry: DisposableLifecycleRegistry? = null
 
     @MainThread
@@ -70,7 +72,7 @@ class RxFragmentLifecycleCompositeRegistry : AbsRxLifecycleRegistry(), RxFragmen
 
     @MainThread
     override fun attachToViewLifecycle(viewLifecycleOwner: LifecycleOwner) {
-        if (viewDisposableRegistry.attached) {
+        if (viewDisposableRegistry.active) {
             return
         }
         viewDisposableRegistry.attachToLifecycle(viewLifecycleOwner)
