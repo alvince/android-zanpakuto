@@ -1,0 +1,65 @@
+ext {
+    kotlin_version = "${getProperty('kotlin.version')}"
+    compileVersion = 31
+    minSdkVersion = 19
+    targetVersion = 31
+
+    apply from: 'lib_depends.gradle'
+
+    coreDepends = [
+        impl    : [
+            libs.kotlin.stdlib,
+            libs.androidx.core,
+        ],
+        testImpl: [
+            libs.junit,
+        ],
+    ]
+
+    lifecycleDepends = [
+        compile : [
+            libs.androidx.lifecycle.common_java8,
+        ],
+        impl    : [
+            libs.kotlin.stdlib,
+            libs.androidx.core,
+            libs.androidx.appcompat,
+            libs.androidx.lifecycle.runtime,
+            libs.androidx.lifecycle.viewmodel,
+        ],
+        testImpl: [
+            libs.junit,
+        ],
+    ]
+
+    rxjava2Depends = [
+        api     : [
+            libs.rxjava.core,
+            libs.rxjava.kotlin,
+            libs.rxjava.android,
+        ],
+        impl    : [
+            libs.kotlin.stdlib,
+            libs.androidx.core,
+            libs.androidx.collection,
+            libs.androidx.lifecycle.runtime,
+            libs.androidx.lifecycle.viewmodel,
+            libs.androidx.fragment.core,
+        ],
+        testImpl: [
+            libs.junit,
+        ],
+    ]
+
+    viewDepends = [
+        impl    : [
+            libs.kotlin.stdlib,
+            libs.androidx.core,
+            libs.androidx.customview,
+            libs.androidx.recyclerview,
+        ],
+        testImpl: [
+            libs.junit,
+        ],
+    ]
+}

@@ -1,0 +1,5 @@
+rootProject.name = "android-zanpakuto"
+include ':core'
+include ':lifecycle'
+include ':reactivex-rxjava2'
+include ':view'
