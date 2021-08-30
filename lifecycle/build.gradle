@@ -3,6 +3,15 @@ plugins {
     id 'kotlin-android'
 }
 
+apply from: '../gradle/publish/publish_config.gradle'
+
+mvn {
+    name 'Zanpakuto lifecycle ext'
+    description 'Zanpakuto lifecycle support extensions'
+    artifact 'lifecycle'
+    version getArtifactVersion()
+}
+
 android {
     compileSdkVersion rootProject.ext.compileVersion
 
@@ -27,16 +36,25 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
     def Depends = [
-        compileOnly: rootProject.ext.lifecycleDepends.compile,
-        implementations: rootProject.ext.lifecycleDepends.impl,
+        compileOnly        : rootProject.ext.lifecycleDepends.compile,
+        implementations    : rootProject.ext.lifecycleDepends.impl,
         testImplementations: rootProject.ext.lifecycleDepends.testImpl,
     ]
     Depends.compileOnly.each { compileOnly it }
     Depends.implementations.each { implementation it }
     Depends.testImplementations.each { testImplementation it }
-    implementation project(':core')
+    if (modeOffline) {
+        implementation project(':core')
+    } else {
+        implementation 'cn.alvince.zanpakuto:core:1.0.0'
+    }
 }
+
+apply from: '../gradle/publish/publish_mvn.gradle'

@@ -3,14 +3,22 @@ plugins {
     id 'kotlin-android'
 }
 
+apply from: '../gradle/publish/publish_config.gradle'
+
+mvn {
+    name 'Zanpakuto core'
+    description 'Zanpakuto core component'
+    artifact 'core'
+    version getArtifactVersion()
+}
+
 android {
     compileSdkVersion rootProject.ext.compileVersion
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetVersion
-        versionCode 1
-        versionName "1.0"
+        versionName getProperty('lib.version')
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -33,9 +41,12 @@ android {
 
 dependencies {
     def Depends = [
-        implementations: rootProject.ext.coreDepends.impl,
+        implementations    : rootProject.ext.coreDepends.impl,
         testImplementations: rootProject.ext.coreDepends.testImpl,
     ]
+    Depends.apis.each { api it }
     Depends.implementations.each { implementation it }
     Depends.testImplementations.each { testImplementation it }
 }
+
+apply from: '../gradle/publish/publish_mvn.gradle'

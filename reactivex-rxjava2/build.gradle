@@ -3,6 +3,15 @@ plugins {
     id 'kotlin-android'
 }
 
+apply from: '../gradle/publish/publish_config.gradle'
+
+mvn {
+    name 'Zanpakuto RxJava2 ext'
+    description 'Zanpakuto RxJava2 support extensions'
+    artifact 'rxjava2'
+    version getArtifactVersion()
+}
+
 android {
     compileSdkVersion rootProject.ext.compileVersion
 
@@ -28,16 +37,25 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
     def Depends = [
-        apis: rootProject.ext.rxjava2Depends.api,
-        implementations: rootProject.ext.rxjava2Depends.impl,
+        apis               : rootProject.ext.rxjava2Depends.api,
+        implementations    : rootProject.ext.rxjava2Depends.impl,
         testImplementations: rootProject.ext.rxjava2Depends.testImpl,
     ]
     Depends.apis.each { api it }
     Depends.implementations.each { implementation it }
     Depends.testImplementations.each { testImplementation it }
-    implementation project(':lifecycle')
+    if (modeOffline) {
+        implementation project(':lifecycle')
+    } else {
+        implementation 'cn.alvince.zanpakuto:lifecycle:1.0.0-SNAPSHOT'
+    }
 }
+
+apply from: '../gradle/publish/publish_mvn.gradle'

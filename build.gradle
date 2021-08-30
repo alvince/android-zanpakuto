@@ -18,6 +18,10 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven {
+            name 'maven-snapshot'
+            url 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
+        }
         jcenter() // Warning: this repository is going to shut down soon
     }
 }

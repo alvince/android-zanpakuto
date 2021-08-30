@@ -3,6 +3,15 @@ plugins {
     id 'kotlin-android'
 }
 
+apply from: '../gradle/publish/publish_config.gradle'
+
+mvn {
+    name 'Zanpakuto android-view ext'
+    description 'Zanpakuto android views extensions'
+    artifact 'view'
+    version getArtifactVersion()
+}
+
 android {
     compileSdkVersion rootProject.ext.compileVersion
 
@@ -33,10 +42,12 @@ android {
 
 dependencies {
     def Depends = [
-        implementatinos: rootProject.ext.viewDepends.impl,
+        implementatinos    : rootProject.ext.viewDepends.impl,
         testImplementations: rootProject.ext.viewDepends.testImpl,
     ]
     Depends.compileOnly.each { compileOnly it }
     Depends.implementatinos.each { implementation it }
     Depends.testImplementations.each { testImplementation it }
 }
+
+apply from: '../gradle/publish/publish_mvn.gradle'
