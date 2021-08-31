@@ -16,6 +16,34 @@ ext {
         ],
     ]
 
+    coroutineDepds = [
+        impl: [
+            libs.kotlin.stdlib,
+            libs.kotlin.coroutines,
+            libs.androidx.lifecycle.runtime_ktx,
+            libs.androidx.lifecycle.viewmodel_ktx,
+            libs.androidx.fragment.core,
+        ],
+        testImpl: [
+            libs.junit,
+        ],
+    ]
+
+    databindingDepds = [
+        compile : [
+            libs.androidx.databinding.runtime,
+            libs.androidx.databinding.adapters,
+        ],
+        impl    : [
+            libs.kotlin.stdlib,
+            libs.androidx.fragment.core,
+            libs.androidx.fragment.ktx,
+        ],
+        testImpl: [
+            libs.junit,
+        ],
+    ]
+
     lifecycleDepends = [
         compile : [
             libs.androidx.lifecycle.common_java8,
