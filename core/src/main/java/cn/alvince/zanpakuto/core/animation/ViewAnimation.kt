@@ -212,6 +212,8 @@ class TranslationAnimationBuilder internal constructor() : ViewAnimationBuilder(
     private fun Int.realType(): Int = max(this, Animation.ABSOLUTE)
 }
 
+/* ========================== animation creations ========================== */
+
 fun xmlAnimation(supplier: ViewAnimationBuilder.SimpleAnimationBuilder.() -> Unit): Animation {
     return ViewAnimationBuilder.SimpleAnimationBuilder()
         .apply(supplier)

@@ -10,18 +10,42 @@ Components
 
 Provides some useful infras functions
 
-Usage:
-```groovy
-dependencies {
-    implementation 'cn.alvince.zanpakuto:core:1.0.0'
-}
+##### Animation
+
+Fast create & play view animation
+
+```kotlin
+val animation = alphaAnimation {
+    // changeAlpha(0.3F, 1F)
+    from = 0.3F
+    to = 1.0F
+} // create an AlphaAnimation
+
+val animation = view.alpha {
+    from = 0.3F
+    to = 1.0F
+} // create and play animation directly
 ```
 
 ### lifecycle
 
 Provides some `Android Lifecycle` based components, and exensions for lifecycle
 
-Usage:
+### rajava2
+
+Provides some `RxJava`2 based components and extensions
+
+Usage
+---
+
+core
+```groovy
+dependencies {
+    implementation 'cn.alvince.zanpakuto:core:1.0.0'
+}
+```
+
+lifecycle
 ```groovy
 dependencies {
     implementation 'cn.alvince.zanpakuto:core:1.0.0' // required
@@ -29,11 +53,7 @@ dependencies {
 }
 ```
 
-### rajava2
-
-Provides some `RxJava`2 based components and extensions
-
-Usage:
+rxjava2 exts
 ```groovy
 dependencies {
     implementation 'cn.alvince.zanpakuto:core:1.0.0' // required
