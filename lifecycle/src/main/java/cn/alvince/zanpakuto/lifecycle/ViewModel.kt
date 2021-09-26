@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package cn.alvince.zanpakuto.lifecycle
 
 import android.app.Application
