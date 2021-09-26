@@ -31,6 +31,14 @@ val animation = view.alpha {
 
 Provides some `Android Lifecycle` based components, and exensions for lifecycle
 
+### view
+
+Provides some `Android View` extensions
+
+### databinding
+
+Provides some `Android Databinding` extensions
+
 ### rajava2
 
 Provides some `RxJava`2 based components and extensions
@@ -50,6 +58,14 @@ lifecycle
 dependencies {
     implementation 'cn.alvince.zanpakuto:core:1.0.0' // required
     implementation 'cn.alvince.zanpakuto:lifecycle:1.0.0'
+}
+```
+
+databinding
+```groovy
+dependencies {
+    implementation 'cn.alvince.zanpakuto:databinding:0.1-SNAPSHOT'
+    implementation 'cn.alvince.zanpakuto:view:0.1-SNAPSHOT'
 }
 ```
 
