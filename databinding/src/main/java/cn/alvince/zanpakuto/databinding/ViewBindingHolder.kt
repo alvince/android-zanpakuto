@@ -26,7 +26,10 @@ interface IViewBindingHolder<T : ViewDataBinding> {
         private var _cleared: Boolean = false
 
         override fun clearBinding(clear: VB.() -> Unit) {
-            binding?.apply(clear)
+            binding?.apply {
+                clear()
+                unbind()
+            }
             _cleared = true
             _binding = null
         }

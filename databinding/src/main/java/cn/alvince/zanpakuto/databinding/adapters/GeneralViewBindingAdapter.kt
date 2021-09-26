@@ -7,7 +7,7 @@ import androidx.databinding.BindingAdapter
 import cn.alvince.zanpakuto.view.gone
 import cn.alvince.zanpakuto.view.visible
 
-@BindingAdapter("visibleOrInvisible")
+@BindingAdapter("visible")
 fun View.changeVisible(visible: Boolean) {
     visible(visible)
 }
