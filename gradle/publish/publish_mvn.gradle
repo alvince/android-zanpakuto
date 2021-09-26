@@ -83,9 +83,9 @@ project.afterEvaluate {
                         }
                     }
                     configurations.compileOnly.getAllDependencies().each { addDependency(it, '') }
-                    configurations.api.getAllDependencies().each { addDependency(it, 'compile') }
+                    configurations.api.getAllDependencies().each { addDependency(it, '') }
                     configurations.implementation.getAllDependencies().each { addDependency(it, 'runtime') }
-                    configurations.runtimeOnly.getAllDependencies().each { addDependency(it, 'compile') }
+                    configurations.runtimeOnly.getAllDependencies().each { addDependency(it, 'runtime') }
                 }
             }
         }

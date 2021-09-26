@@ -43,7 +43,6 @@ dependencies {
         implementatinos    : rootProject.ext.viewDepends.impl,
         testImplementations: rootProject.ext.viewDepends.testImpl,
     ]
-    Depends.compileOnly.each { compileOnly it }
     Depends.implementatinos.each { implementation it }
     Depends.testImplementations.each { testImplementation it }
 }
