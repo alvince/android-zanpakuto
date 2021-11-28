@@ -29,6 +29,20 @@ ext {
         ],
     ]
 
+    viewbindingDepds = [
+        compile : [
+            libs.androidx.viewbinding,
+        ],
+        impl    : [
+            libs.kotlin.stdlib,
+            libs.androidx.fragment.core,
+            libs.androidx.fragment.ktx,
+        ],
+        testImpl: [
+            libs.junit,
+        ],
+    ]
+
     databindingDepds = [
         compile : [
             libs.androidx.databinding.runtime,

@@ -10,10 +10,11 @@ ext {
             appcompat   : 'androidx.appcompat:appcompat:1.3.1',
             collection  : 'androidx.collection:collection-ktx:1.1.0',
             customview  : 'androidx.customview:customview:1.1.0',
+            viewbinding : 'androidx.databinding:viewbinding:4.2.1',
             databinding : [
                 runtime : 'androidx.databinding:databinding-runtime:4.2.1',
                 common  : 'androidx.databinding:databinding-common:4.2.1',
-                adapters: 'androidx.databinding:databinding-runtime:4.2.1',
+                adapters: 'androidx.databinding:databinding-adapters:4.2.1',
             ],
             lifecycle   : [
                 runtime      : 'androidx.lifecycle:lifecycle-runtime:2.3.1',

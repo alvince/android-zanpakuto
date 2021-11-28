@@ -1,0 +1,54 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+apply from: '../gradle/publish/publish_config.gradle'
+
+mvn {
+    name 'Zanpakuto view-binding ext'
+    description 'Zanpakuto view-binding support extensions'
+    artifact 'viewbinding'
+    version getArtifactVersion()
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetVersion
+        versionName getProperty('lib.version')
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    def Depends = [
+        compileOnly        : rootProject.ext.viewbindingDepds.compile,
+        implementatinos    : rootProject.ext.viewbindingDepds.impl,
+        testImplementations: rootProject.ext.viewbindingDepds.testImpl,
+    ]
+    Depends.compileOnly.each { compileOnly it }
+    Depends.implementatinos.each { implementation it }
+    Depends.testImplementations.each { testImplementation it }
+}
+
+apply from: '../gradle/publish/publish_mvn.gradle'
