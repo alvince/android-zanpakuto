@@ -50,8 +50,10 @@ dependencies {
     Depends.implementatinos.each { implementation it }
     Depends.testImplementations.each { testImplementation it }
     if (modeOffline) {
+        api project(':viewbinding')
         implementation project(':view')
     } else {
+        api 'cn.alvince.zanpakuto:viewbinding:0.1-SNAPSHOT'
         implementation 'cn.alvince.zanpakuto:view:0.1-SNAPSHOT'
     }
 }

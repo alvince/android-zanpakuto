@@ -7,13 +7,14 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import cn.alvince.zanpakuto.viewbinding.IViewBindingHolder
+import cn.alvince.zanpakuto.viewbinding.ObserverWrapper
 
-class FragmentViewDataBindingHolder<T : ViewDataBinding>(@LayoutRes private val layoutRes: Int) :
-    FragmentBindingHolder<T>, IViewBindingHolder<T> by IViewBindingHolder.Holder() {
+class FragmentViewDataBindingHolder<T : ViewDataBinding>(@LayoutRes private val layoutRes: Int) : FragmentBindingHolder<T> {
 
     override val binding: T? get() = _bindingHolder.binding
 
-    private val _bindingHolder = IViewBindingHolder.Holder<T>()
+    private val _bindingHolder = ViewDataBindingHolder<T>()
 
     override fun inflateBinding(
         inflater: LayoutInflater,
@@ -23,7 +24,7 @@ class FragmentViewDataBindingHolder<T : ViewDataBinding>(@LayoutRes private val 
     ): View {
         return DataBindingUtil.inflate<T>(inflater, layoutRes, root, attachToRoot)
             .also {
-                _bindingHolder.inflate(it)
+                _bindingHolder.bind(it)
                 block(it)
             }
             .root
@@ -61,7 +62,7 @@ class FragmentViewDataBindingHolder<T : ViewDataBinding>(@LayoutRes private val 
  * class MyFragment : Fragment(), FragmentBindingHolder<MyFragmentBinding> by FragmentBindingHolder(R.layout.my_fragment) {
  *
  *     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
- *         return inflate(inflater, container, false, /* option: */{ onClear() }) { binding ->
+ *         return inflate(inflater, container, false, /* option: */onClear = { it.onClear() }) { binding ->
  *             // init with binding
  *             …
  *         }

@@ -5,17 +5,18 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import cn.alvince.zanpakuto.viewbinding.ObserverWrapper
 
 class ActivityViewDataBindingHolder<T : ViewDataBinding>(@LayoutRes private val layoutRes: Int) : ActivityBindingHolder<T> {
 
     override val binding: T? get() = _bindingHolder.binding
 
-    private val _bindingHolder = IViewBindingHolder.Holder<T>()
+    private val _bindingHolder = ViewDataBindingHolder<T>()
 
     override fun inflateBinding(activity: ComponentActivity, init: (binding: T) -> Unit) {
         DataBindingUtil.setContentView<T>(activity, layoutRes)
             .also { binding ->
-                _bindingHolder.inflate(binding)
+                _bindingHolder.bind(binding)
                 init(binding)
             }
     }
@@ -47,7 +48,7 @@ class ActivityViewDataBindingHolder<T : ViewDataBinding>(@LayoutRes private val 
  *     override fun onCreate(savedInstanceState: Bundle?) {
  *         …
  *         // replace setContentView(), and hold binding instance
- *         inflateBinding(/* option: */onClear = { onClear() }) { binding ->
+ *         inflateBinding(/* option: */onClear = { it.onClear() }) { binding ->
  *             // init with binding
  *             …
  *         }
