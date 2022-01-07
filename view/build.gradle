@@ -46,5 +46,3 @@ dependencies {
     Depends.implementatinos.each { implementation it }
     Depends.testImplementations.each { testImplementation it }
 }
-
-apply from: '../gradle/publish/publish_mvn.gradle'
