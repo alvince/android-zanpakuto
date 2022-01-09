@@ -57,5 +57,3 @@ dependencies {
         implementation 'cn.alvince.zanpakuto:lifecycle:1.0.0-SNAPSHOT'
     }
 }
-
-apply from: '../gradle/publish/publish_mvn.gradle'

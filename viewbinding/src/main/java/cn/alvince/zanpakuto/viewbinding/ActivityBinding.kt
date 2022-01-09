@@ -29,7 +29,7 @@ class ActivityViewBindingHolder<T : ViewBinding> : ActivityViewBinding<T> {
 
     override fun ComponentActivity.inflate(bindingClass: Class<T>, init: (T) -> Unit) {
         try {
-            bindingClass.getDeclaredMethod("inflate", LayoutInflater::class.java).invoke(null, layoutInflater) as T
+            bindingClass.getDeclaredMethod("inflate", LayoutInflater::class.java).invoke(null, layoutInflater) as? T
         } catch (ex: NoSuchMethodException) {
             Log.e(TAG, "Fail to inflate binding<${bindingClass::javaClass.name}> in ${this::javaClass.name}", ex)
             null

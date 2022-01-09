@@ -40,8 +40,6 @@ class MvnConfig {
 ext {
     modeOffline = Boolean.parseBoolean(getProperty('release.offline'))
     snapshot = Boolean.parseBoolean(getProperty('lib.snapshot'))
-    repoUsername = getProperty('ossrhUsername').toString()
-    repoPassword = getProperty('ossrhPassword').toString()
 
     getArtifactVersion = {
         def libVersion = getProperty('lib.version')

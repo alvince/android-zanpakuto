@@ -31,6 +31,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    buildFeatures {
+        buildConfig false
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -50,5 +53,3 @@ dependencies {
     Depends.implementatinos.each { implementation it }
     Depends.testImplementations.each { testImplementation it }
 }
-
-apply from: '../gradle/publish/publish_mvn.gradle'
