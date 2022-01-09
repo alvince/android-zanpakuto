@@ -111,6 +111,13 @@ Databinding
 
 Provides some `Android Databinding` extensions
 
+```groovy
+dependencies {
+    implementation 'cn.alvince.zanpakuto:databinding:0.1-SNAPSHOT'
+    implementation 'cn.alvince.zanpakuto:view:0.1-SNAPSHOT'
+}
+```
+
 Rxjava2
 ---
 
