@@ -10,8 +10,7 @@ import java.util.TimeZone
  *
  * @author alvince.zy@gmail.com
  */
-@JvmInline
-value class Timestamp(val inMillis: Long) : Comparable<Timestamp> {
+inline class Timestamp(val inMillis: Long) : Comparable<Timestamp> {
 
     val inSeconds: Long get() = inMillis / 1000L
 

@@ -12,8 +12,7 @@ import kotlin.math.roundToInt
  *
  * @author alvince.zy@gmail.com
  */
-@JvmInline
-value class ValueDimensions(private val valueAndUnit: Long) {
+inline class ValueDimensions(private val valueAndUnit: Long) {
 
     companion object {
         private const val DIMENSION_VALUE_MASK: Long = 0xFFFFFFFF

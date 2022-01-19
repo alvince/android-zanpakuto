@@ -8,7 +8,7 @@ apply from: '../gradle/publish/publish_config.gradle'
 mvn {
     name 'Zanpakuto core'
     description 'Zanpakuto core component'
-    artifact 'core'
+    artifact 'core-stdlib1.3'
     version getArtifactVersion()
 }
 
@@ -33,6 +33,9 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        freeCompilerArgs = ['-Xinline-classes']
     }
 }
 
