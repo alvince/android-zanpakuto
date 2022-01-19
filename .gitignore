@@ -3,6 +3,7 @@
 /.gradle/
 /captures/
 /local.properties
+/deps.txt
 build/
 .externalNativeBuild
 .cxx
