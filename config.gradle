@@ -1,5 +1,5 @@
 ext {
-    kotlin_version = "${getProperty('kotlin.version')}"
+    kotlin_version = getProperty('kotlin.version')
     compileVersion = 31
     minSdkVersion = 19
     targetVersion = 31

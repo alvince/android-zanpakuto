@@ -13,7 +13,8 @@ import java.util.Locale
  *
  * @author alvince.zy@gmail.com
  */
-inline class Color(private val rawValue: Long) {
+@JvmInline
+value class Color(private val rawValue: Long) {
 
     @get:ColorInt
     val colorInt: Int
@@ -98,7 +99,7 @@ inline class Color(private val rawValue: Long) {
 
         fun of(colorString: String): Color {
             val stdColorFmt = colorString.let {
-                if (it[0] == '#') it.matches(COLOR_WEB_PATTERN) else COLOR_NAME_ARRAY.contains(it.toLowerCase(Locale.ROOT))
+                if (it[0] == '#') it.matches(COLOR_WEB_PATTERN) else COLOR_NAME_ARRAY.contains(it.lowercase(Locale.ROOT))
             }
             if (!stdColorFmt) {
                 return UNKNOWN

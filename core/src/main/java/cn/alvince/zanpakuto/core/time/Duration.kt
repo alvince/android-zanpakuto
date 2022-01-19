@@ -4,7 +4,8 @@ import java.util.concurrent.TimeUnit
 import kotlin.math.roundToInt
 import kotlin.math.sign
 
-inline class Duration(private val rawValue: Long) : Comparable<Duration> {
+@JvmInline
+value class Duration(private val rawValue: Long) : Comparable<Duration> {
 
     val inMillis: Long get() = if (isInMillis() && isFinite()) value else toLong(TimeUnit.MILLISECONDS)
 
