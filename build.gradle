@@ -22,6 +22,7 @@ allprojects {
             name 'maven-snapshot'
             url 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
         }
+        mavenLocal()
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
