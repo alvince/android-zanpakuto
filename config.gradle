@@ -6,7 +6,7 @@ ext {
 
     apply from: 'lib_depends.gradle'
 
-    coreDepends = [
+    libCoreDeps = [
         impl    : [
             libs.kotlin.stdlib,
             libs.androidx.core,
@@ -58,7 +58,7 @@ ext {
         ],
     ]
 
-    lifecycleDepends = [
+    libLifecycleDepends = [
         compile : [
             libs.androidx.lifecycle.common_java8,
         ],

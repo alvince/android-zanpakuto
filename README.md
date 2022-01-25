@@ -10,7 +10,10 @@ Provides some useful infras functions
 
 ```groovy
 dependencies {
-    implementation 'cn.alvince.zanpakuto:core:1.0.0'
+    implementation 'cn.alvince.zanpakuto:core:1.0.0.f' // require Kotlin 1.6
+    
+    // or deps lower version of Kotlin 
+    implementation 'cn.alvince.zanpakuto:core-stdlib1.3:1.0.0' // Kotlin 1.3
 }
 ```
 
@@ -38,8 +41,12 @@ Provides some `Android Lifecycle` based components, and exensions for lifecycle
 
 ```groovy
 dependencies {
-    implementation 'cn.alvince.zanpakuto:core:1.0.0' // required
-    implementation 'cn.alvince.zanpakuto:lifecycle:1.0.0'
+    implementation 'cn.alvince.zanpakuto:lifecycle:1.0.0.f' // require Kotlin 1.6
+    implementation 'cn.alvince.zanpakuto:core:1.0.0.f' // deps on lib-core
+
+    // or deps lower version of Kotlin 
+    implementation 'cn.alvince.zanpakuto:lifecycle-stdlib1.3:1.0.0' // Kotlin 1.3
+    implementation 'cn.alvince.zanpakuto:core-stdlib1.3:1.0.0'
 }
 ```
 

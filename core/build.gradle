@@ -41,8 +41,8 @@ android {
 
 dependencies {
     def Depends = [
-        implementations    : rootProject.ext.coreDepends.impl,
-        testImplementations: rootProject.ext.coreDepends.testImpl,
+        implementations    : libCoreDeps.impl,
+        testImplementations: libCoreDeps.testImpl,
     ]
     Depends.apis.each { api it }
     Depends.implementations.each { implementation it }
