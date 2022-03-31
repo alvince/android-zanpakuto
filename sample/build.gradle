@@ -45,6 +45,7 @@ dependencies {
 
     implementation project(':core')
     implementation project(':lifecycle')
+    implementation project(':view')
     implementation project(':viewbinding')
 
     testImplementation libs.junit

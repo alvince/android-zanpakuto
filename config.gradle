@@ -29,6 +29,34 @@ ext {
         ],
     ]
 
+    lifecycleDepends = [
+        compile : [
+            libs.androidx.lifecycle.common_java8,
+        ],
+        impl    : [
+            libs.kotlin.stdlib,
+            libs.androidx.core,
+            libs.androidx.appcompat,
+            libs.androidx.lifecycle.runtime,
+            libs.androidx.lifecycle.viewmodel,
+        ],
+        testImpl: [
+            libs.junit,
+        ],
+    ]
+
+    viewDepends = [
+        impl    : [
+            libs.kotlin.stdlib,
+            libs.androidx.core,
+            libs.androidx.customview,
+            libs.androidx.recyclerview,
+        ],
+        testImpl: [
+            libs.junit,
+        ],
+    ]
+
     viewbindingDepds = [
         compile : [
             libs.androidx.viewbinding,
@@ -58,22 +86,6 @@ ext {
         ],
     ]
 
-    lifecycleDepends = [
-        compile : [
-            libs.androidx.lifecycle.common_java8,
-        ],
-        impl    : [
-            libs.kotlin.stdlib,
-            libs.androidx.core,
-            libs.androidx.appcompat,
-            libs.androidx.lifecycle.runtime,
-            libs.androidx.lifecycle.viewmodel,
-        ],
-        testImpl: [
-            libs.junit,
-        ],
-    ]
-
     rxjava2Depends = [
         api     : [
             libs.rxjava.core,
@@ -87,18 +99,6 @@ ext {
             libs.androidx.lifecycle.runtime,
             libs.androidx.lifecycle.viewmodel,
             libs.androidx.fragment.core,
-        ],
-        testImpl: [
-            libs.junit,
-        ],
-    ]
-
-    viewDepends = [
-        impl    : [
-            libs.kotlin.stdlib,
-            libs.androidx.core,
-            libs.androidx.customview,
-            libs.androidx.recyclerview,
         ],
         testImpl: [
             libs.junit,
