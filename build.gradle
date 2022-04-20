@@ -61,6 +61,10 @@ subprojects {
                 return value != null ? value : ""
             }
 
+            project.android.buildFeatures {
+                buildConfig false
+            }
+
             publishing {
                 def mvnConfig = project.extensions.getByName('mvn')
 
