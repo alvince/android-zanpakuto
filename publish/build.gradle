@@ -1,0 +1,11 @@
+plugins {
+    id 'groovy'
+    id 'kotlin'
+    id 'maven-publish'
+}
+
+dependencies {
+    compileOnly gradleApi()
+    compileOnly localGroovy()
+    compileOnly 'com.android.tools.build:gradle:4.2.2'
+}
