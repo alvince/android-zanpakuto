@@ -66,14 +66,15 @@ subprojects {
 
             publishing {
                 def mvnConfig = project.extensions.getByName('mvn')
+                def confVersion = mvnConfig.version
+                def artVersion = confVersion.isEmpty() ? project.version : confVersion
+                println "artifact version: $artVersion"
 
                 publications {
                     maven(MavenPublication) {
                         artifactId mvnConfig.artifact
                         groupId mvnConfig.group
-                        def confVersion = mvnConfig.version
-                        println "artifact version: ${confVersion.isEmpty() ? project.version : confVersion}"
-                        version confVersion.isEmpty() ? project.version : confVersion
+                        version artVersion
 
                         artifact project.file("build/outputs/aar/${project.name}-release.aar")
                         artifact artifactSourcesJar
@@ -156,7 +157,8 @@ subprojects {
                     maven {
                         def releasesRepoUrl = 'https://s01.oss.sonatype.org/content/repositories/releases/'
                         def snapshotsRepoUrl = 'https://s01.oss.sonatype.org/content/repositories/snapshots/'
-                        url = mvnConfig.version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+                        url = artVersion.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+                        println "use url: $url"
                         credentials {
                             username = repoUsername
                             password = repoPassword
