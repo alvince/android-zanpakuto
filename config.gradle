@@ -104,4 +104,16 @@ ext {
             libs.junit,
         ],
     ]
+
+    gsonDepends = [
+        impl:[
+            libs.kotlin.stdlib,
+        ],
+        compile : [
+            libs.google.gson,
+        ],
+        testImpl: [
+            libs.junit,
+        ],
+    ]
 }
