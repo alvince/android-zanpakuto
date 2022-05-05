@@ -9,7 +9,7 @@ mvn {
     name 'Zanpakuto android-view ext'
     description 'Zanpakuto android views extensions'
     artifact 'view'
-    version getArtifactVersion()
+    version "0.1-SNAPSHOT"
 }
 
 android {

@@ -10,7 +10,7 @@ mvn {
     name 'Zanpakuto view-binding ext'
     description 'Zanpakuto view-binding support extensions'
     artifact 'viewbinding'
-    version getArtifactVersion()
+    version "0.1-SNAPSHOT"
 }
 
 android {

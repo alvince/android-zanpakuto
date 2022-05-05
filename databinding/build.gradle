@@ -10,7 +10,7 @@ mvn {
     name 'Zanpakuto data-binding ext'
     description 'Zanpakuto data-binding support extensions'
     artifact 'databinding'
-    version getArtifactVersion()
+    version "0.1-SNAPSHOT"
 }
 
 android {
@@ -19,7 +19,6 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetVersion
-        versionName getProperty('lib.version')
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"

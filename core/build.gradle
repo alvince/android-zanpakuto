@@ -9,7 +9,7 @@ mvn {
     name 'Zanpakuto core'
     description 'Zanpakuto core component'
     artifact 'core'
-    version getArtifactVersion()
+    version "1.0.1-SNAPSHOT"
 }
 
 android {
@@ -18,7 +18,6 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetVersion
-        versionName getProperty('lib.version')
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
