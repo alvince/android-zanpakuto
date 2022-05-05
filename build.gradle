@@ -71,7 +71,9 @@ subprojects {
                     maven(MavenPublication) {
                         artifactId mvnConfig.artifact
                         groupId mvnConfig.group
-                        version mvnConfig.version
+                        def confVersion = mvnConfig.version
+                        println "artifact version: ${confVersion.isEmpty() ? project.version : confVersion}"
+                        version confVersion.isEmpty() ? project.version : confVersion
 
                         artifact project.file("build/outputs/aar/${project.name}-release.aar")
                         artifact artifactSourcesJar

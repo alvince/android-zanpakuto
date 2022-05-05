@@ -3,13 +3,14 @@ plugins {
     id 'kotlin-android'
 }
 
+version "0.1-SNAPSHOT"
+
 apply from: '../gradle/publish/publish_config.gradle'
 
 mvn {
     name 'Zanpakuto android-view ext'
     description 'Zanpakuto android views extensions'
     artifact 'view'
-    version "0.1-SNAPSHOT"
 }
 
 android {

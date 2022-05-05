@@ -3,13 +3,14 @@ plugins {
     id 'kotlin-android'
 }
 
+version "0.0.1-SNAPSHOT"
+
 apply from: '../gradle/publish/publish_config.gradle'
 
 mvn {
     name 'Zanpakuto core'
     description 'Zanpakuto core component'
     artifact 'core'
-    version "0.0.1-SNAPSHOT"
 }
 
 android {

@@ -3,13 +3,14 @@ plugins {
     id 'kotlin-android'
 }
 
+version "1.0.0-SNAPSHOT"
+
 apply from: '../gradle/publish/publish_config.gradle'
 
 mvn {
     name 'Zanpakuto RxJava2 ext'
     description 'Zanpakuto RxJava2 support extensions'
     artifact 'rxjava2'
-    version "1.0.0-SNAPSHOT"
 }
 
 android {

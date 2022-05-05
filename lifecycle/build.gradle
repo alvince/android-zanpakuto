@@ -3,13 +3,14 @@ plugins {
     id 'kotlin-android'
 }
 
+version "1.0.0.f"
+
 apply from: '../gradle/publish/publish_config.gradle'
 
 mvn {
     name 'Zanpakuto lifecycle ext'
     description 'Zanpakuto lifecycle support extensions'
     artifact 'lifecycle'
-    version "1.0.0.f"
 }
 
 android {
