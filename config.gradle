@@ -10,6 +10,8 @@ ext {
         impl    : [
             libs.kotlin.stdlib,
             libs.androidx.core,
+            libs.androidx.annotation,
+            libs.androidx.collection,
         ],
         testImpl: [
             libs.junit,
