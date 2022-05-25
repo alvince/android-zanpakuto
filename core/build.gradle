@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
 }
 
-version "1.0.1-SNAPSHOT"
+version "1.0.1"
 
 apply from: '../gradle/publish/publish_config.gradle'
 

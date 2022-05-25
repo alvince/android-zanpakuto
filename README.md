@@ -19,9 +19,7 @@ Provides some useful infras functions
 
 ```groovy
 dependencies {
-    implementation 'cn.alvince.zanpakuto:core:1.0.0.f' // require Kotlin 1.6
-    // snapshot version, require snapshot repository
-    implementation 'cn.alvince.zanpakuto:core:1.0.1-SNAPSHOT'
+    implementation 'cn.alvince.zanpakuto:core:1.0.1' // require Kotlin 1.6
     
     // or deps lower version of Kotlin 
     implementation 'cn.alvince.zanpakuto:core-stdlib1.3:1.0.0' // Kotlin 1.3
