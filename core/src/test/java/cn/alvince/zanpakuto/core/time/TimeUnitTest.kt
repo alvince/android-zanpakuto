@@ -38,4 +38,24 @@ class TimeUnitTest {
             println("[plus](2days) ${it + Duration.of(2, TimeUnit.DAYS)}")
         }
     }
+
+    @Test
+    fun testTimestampCalc() {
+        val now = Timestamp.now()
+        val nextSec = now + Duration.of(1, TimeUnit.SECONDS)
+        nextSec.also { t ->
+            println(t)
+            (t - now).also { println(it) }
+        }
+        val nextMin = now + Duration.of(1, TimeUnit.MINUTES)
+        nextMin.also { t ->
+            println(t)
+            (t - now).also { println(it) }
+        }
+        val nextH = now + Duration.of(1, TimeUnit.HOURS)
+        nextH.also { t ->
+            println(t)
+            (t - now).also { println(it) }
+        }
+    }
 }

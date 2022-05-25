@@ -4,6 +4,7 @@ import java.util.Calendar
 import java.util.Date
 import java.util.Locale
 import java.util.TimeZone
+import java.util.concurrent.TimeUnit
 
 /**
  * Created by alvince on 2021/12/22
@@ -21,7 +22,7 @@ value class Timestamp(val inMillis: Long) : Comparable<Timestamp> {
 
     operator fun minus(duration: Duration) = Timestamp(inMillis - duration.inMillis)
 
-    operator fun minus(other: Timestamp): Duration = Duration(inMillis - other.inMillis)
+    operator fun minus(other: Timestamp): Duration = Duration.of(inMillis - other.inMillis, TimeUnit.MILLISECONDS)
 
     override fun toString(): String {
         return buildString {
