@@ -104,6 +104,7 @@ ext {
             libs.kotlin.stdlib,
             libs.androidx.core,
             libs.androidx.customview,
+            libs.androidx.lifecycle.runtime,
             libs.androidx.recyclerview,
         ],
         testImpl: [
