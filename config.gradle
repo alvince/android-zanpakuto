@@ -9,6 +9,7 @@ ext {
     coreDepends = [
         impl    : [
             libs.kotlin.stdlib,
+            libs.kotlin.coroutines,
             libs.androidx.core,
             libs.androidx.annotation,
             libs.androidx.collection,
@@ -66,10 +67,13 @@ ext {
         ],
         impl    : [
             libs.kotlin.stdlib,
+            libs.kotlin.coroutines,
             libs.androidx.core,
             libs.androidx.appcompat,
             libs.androidx.lifecycle.runtime,
+            libs.androidx.lifecycle.runtime_ktx,
             libs.androidx.lifecycle.viewmodel,
+            libs.androidx.lifecycle.viewmodel_ktx,
         ],
         testImpl: [
             libs.junit,

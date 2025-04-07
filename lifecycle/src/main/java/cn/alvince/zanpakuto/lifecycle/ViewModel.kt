@@ -12,6 +12,7 @@ import kotlin.reflect.KClass
 /**
  * An implementation of [ViewModel] with [Lifecycle] event perceived
  */
+@Deprecated("Use cn.alvince.zanpakuto.lifecycle.lifecycleViewModels instead")
 open class LifecycleViewModel : ViewModel(), LifecycleMonitor, CompoundLifecycleObserver, LifecycleLiveStateOwner by SimpleLifecycleLiveStateOwner() {
 
     private val lifecycleMonitor = ViewModelLifecycleMonitor { source, event ->
@@ -39,6 +40,7 @@ open class LifecycleViewModel : ViewModel(), LifecycleMonitor, CompoundLifecycle
 /**
  * An implementation of [AndroidViewModel] with [Lifecycle] event perceived
  */
+@Deprecated("Use cn.alvince.zanpakuto.lifecycle.lifecycleViewModels instead")
 open class LifecycleAppViewModel(application: Application) : AndroidViewModel(application),
     LifecycleMonitor, CompoundLifecycleObserver,
     LifecycleLiveStateOwner by SimpleLifecycleLiveStateOwner() {
@@ -78,6 +80,7 @@ open class LifecycleAppViewModel(application: Application) : AndroidViewModel(ap
  * [factoryProducer] is a lambda that will be called during initialization,
  * returned [ViewModelProvider.Factory] will be used for creation of [VM]
  */
+@Deprecated("Replace with cn.alvince.zanpakuto.lifecycle.AutoLifecycleViewModelLazy")
 class LifecycleViewModelLazy<VM : ViewModel>(
     private val viewModelClass: KClass<VM>,
     private val storeProducer: () -> ViewModelStore,
