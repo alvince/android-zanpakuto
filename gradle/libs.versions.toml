@@ -1,0 +1,55 @@
+[versions]
+agp = "8.7.3"
+kotlin = "1.9.24"
+coroutines = "1.8.1"
+androidx-core = "1.13.1"
+androidx-annotation = "1.8.2"
+androidx-appcompat = "1.7.0"
+androidx-collection = "1.4.5"
+androidx-customview = "1.2.0"
+androidx-recyclerview = "1.3.2"
+androidx-lifecycle = "2.8.7"
+androidx-fragment = "1.8.6"
+material = "1.12.0"
+gson = "2.10.1"
+rxjava = "2.2.21"
+rxkotlin = "2.4.0"
+rxandroid = "2.1.1"
+junit4 = "4.13.2"
+androidx-test-junit = "1.2.1"
+espresso = "3.6.1"
+databinding = "8.7.3"
+
+[libraries]
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+androidx-annotation = { module = "androidx.annotation:annotation", version.ref = "androidx-annotation" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+androidx-collection = { module = "androidx.collection:collection-ktx", version.ref = "androidx-collection" }
+androidx-customview = { module = "androidx.customview:customview", version.ref = "androidx-customview" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "androidx-recyclerview" }
+androidx-viewbinding = { module = "androidx.databinding:viewbinding", version.ref = "databinding" }
+androidx-databinding-runtime = { module = "androidx.databinding:databinding-runtime", version.ref = "databinding" }
+androidx-databinding-adapters = { module = "androidx.databinding:databinding-adapters", version.ref = "databinding" }
+androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-common-java8 = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
+androidx-fragment = { module = "androidx.fragment:fragment", version.ref = "androidx-fragment" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "androidx-fragment" }
+google-material = { module = "com.google.android.material:material", version.ref = "material" }
+google-gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+rxjava-core = { module = "io.reactivex.rxjava2:rxjava", version.ref = "rxjava" }
+rxjava-kotlin = { module = "io.reactivex.rxjava2:rxkotlin", version.ref = "rxkotlin" }
+rxjava-android = { module = "io.reactivex.rxjava2:rxandroid", version.ref = "rxandroid" }
+junit4 = { module = "junit:junit", version.ref = "junit4" }
+androidx-test-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-test-junit" }
+androidx-test-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
